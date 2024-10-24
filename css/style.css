@@ -1,19 +1,43 @@
+:root {
+    /* Light mode colors */
+    --bg-color: #EBE9E1;
+    --text-color: #C33000;
+    --p-color: black;
+    --nav-bg-color: #C33000;
+    --table-border: #ddd;
+    --tr-color: white;
+    --hover-bg: #f1f1f1;
+}
+
+.dark-mode {
+    /* Dark mode colors */
+    --bg-color: #2E2E2E;
+    --text-color: #FFA500;
+    --p-color: white;
+    --nav-bg-color: #444;
+    --table-border: #555;
+    --tr-color: black;
+    --hover-bg: #555;
+}
+
 /* Global Styles */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #EBE9E1;
+    background-color: var(--bg-color);
+    color: var(--p-color);
     margin: 0;
     padding: 0;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Meet title and date (h1 and h2) */
 h2, header h1, header h2 {
-    color: #E43D12;
+    color: var(--text-color);
     text-align: center;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    grid-column: 1 / -1;
 }
 
-/* h1 */
 header h1 {
     margin: 20px auto 5px auto;
     text-transform: uppercase;
@@ -27,11 +51,10 @@ header h1 a {
 }
 
 header h1 a:hover {
-    background-color: #E43D12;
+    background-color: var(--nav-bg-color);
     color: white;
 }
 
-/* h2 */
 header h2 {
     font-weight: 500;
     font-size: 22px;
@@ -40,9 +63,9 @@ header h2 {
 
 /* Navigation */
 nav {
-    background-color: #E43D12;
+    background-color: var(--nav-bg-color);
     padding: 10px;
-    font-size: 16px;
+    font-size: 19px;
     text-align: center;
 }
 
@@ -67,7 +90,7 @@ nav a {
 
 nav a:hover {
     background-color: white;
-    color: #E43D12;
+    color: var(--nav-bg-color);
 }
 
 /* Table Styling */
@@ -75,31 +98,31 @@ table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 15px;
-    border: 1px solid #ddd;
+    border: 1px solid var(--table-border);
     font-size: 14px;
 }
 
 th, td {
     padding: 8px;
-    border: 1px solid #ddd;
+    border: 1px solid var(--table-border);
     text-align: center;
 }
 
 th {
-    background-color: #E43D12;
+    background-color: var(--nav-bg-color);
     color: white;
 }
 
 tr:nth-child(even) {
-    background-color: #EBE9E1;
+    background-color: var(--bg-color);
 }
 
 tr:nth-child(odd) {
-    background-color: white;
+    background-color: var(--tr-color);
 }
 
 tr:hover {
-    background-color: #f1f1f1;
+    background-color: var(--hover-bg);
     font-weight: 700;
 }
 
@@ -122,11 +145,11 @@ tr:hover {
 
 #individual-results .athlete img {
     margin-bottom: 10px;
-    max-width: 100%; /* Ensure images are responsive */
+    max-width: 100%;
 }
 
 #individual-results .athlete img:hover {
-    border: 5px solid #E43D12;
+    border: 5px solid var(--text-color);
 }
 
 #individual-results .athlete dt, 
@@ -142,29 +165,38 @@ tr:hover {
 #individual-results .athlete figcaption {
     font-weight: bold;
     margin-top: 10px;
-    color: #E43D12;
+    color: var(--text-color);
     font-size: 17px;
 }
 
 /* Gallery Section */
 #gallery {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* Default 2 columns */
+    grid-template-columns: 1fr 1fr;
     gap: 8px;
     padding: 10px;
 }
 
 #gallery img {
-    width: 100%; /* Ensure images are responsive */
+    width: 100%;
 }
 
 #gallery img:hover {
-    border: 5px solid #E43D12;
+    border: 5px solid var(--text-color);
+}
+
+#individual-results, #gallery {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+    width: 100%;
+    padding: 0 10px;
+    margin: 15px 0;
 }
 
 /* Footer */
 footer {
-    background-color: #E43D12;
+    background-color: var(--nav-bg-color);
     color: white;
     padding: 15px;
     text-align: center;
@@ -180,7 +212,7 @@ footer a {
 
 footer a:hover {
     background-color: white;
-    color: #E43D12;
+    color: var(--nav-bg-color);
 }
 
 /* MEDIA QUERIES */
@@ -192,11 +224,11 @@ footer a:hover {
     }
 
     #individual-results {
-        grid-template-columns: repeat(2, 1fr); /* 2 columns */
+        grid-template-columns: repeat(2, 1fr);
     }
 
     #gallery {
-        grid-template-columns: repeat(4, 1fr); /* 4 columns */
+        grid-template-columns: repeat(4, 1fr);
     }
 
     header h1 {
@@ -220,11 +252,11 @@ footer a:hover {
     }
 
     #individual-results {
-        grid-template-columns: repeat(4, 1fr); /* 4 columns */
+        grid-template-columns: repeat(4, 1fr);
     }
 
     #gallery {
-        grid-template-columns: repeat(7, 1fr); /* 7 columns */
+        grid-template-columns: repeat(7, 1fr);
     }
 
     header h1 {
@@ -241,5 +273,58 @@ footer a:hover {
 
     footer {
         font-size: 20px;
+    }
+}
+
+/* Hamburger icon styles */
+.hamburger {
+    display: block;
+    cursor: pointer;
+    font-size: 28px;
+    color: white;
+    background: none;
+    border: none;
+    padding: 10px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.hamburger:hover {
+    background-color: white;
+    color: var(--nav-bg-color);
+}
+
+nav ul {
+    display: none;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+}
+
+/* Show menu when checkbox is checked */
+#toggle:checked + .hamburger + ul {
+    display: flex;
+    background-color: var(--nav-bg-color);
+}
+
+@media (min-width: 900px) {
+    nav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+    }
+
+    nav ul {
+        display: flex;
+        background-color: transparent;
+        gap: 10px;
+    }
+
+    nav li {
+        margin: 0;
+    }
+
+    .hamburger {
+        display: none;
     }
 }

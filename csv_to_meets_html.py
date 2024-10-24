@@ -32,32 +32,32 @@ def csv_to_html(csv_filename, output_folder):
 <link rel="stylesheet" href="../css/reset.css">
 <link rel="stylesheet" href="../css/style.css">
 </head>
-   <body>
-   <nav>
-     <ul>
+<body>
+
+<nav>
+    <input type="checkbox" id="toggle" style="display:none;">
+    <label class="hamburger" for="toggle">&#9776;</label>
+    <ul>
         <li><a href="index.html">Home Page</a></li>
         <li><a href="#summary">Summary</a></li>
         <li><a href="#team-results">Team Results</a></li>
         <li><a href="#individual-results">Individual Results</a></li>
         <li><a href="#gallery">Gallery</a></li>
-     </ul>
-   </nav>
-   <header>
-      <!--Meet Info-->
-       
-        <h1><a href="{link_url}">{link_text}</a></h1>
-        <h2>{h2_text}</h2>
+    </ul>
+</nav>
+
+<header>
+    <h1><a href="{link_url}">{link_text}</a></h1>
+    <h2>{h2_text}</h2>
 </header>
    <main id = "main">
-
+    <button id="theme-toggle">Toggle Dark Mode</button>
 
     <section class="summary" id = "summary">
       <h2>Race Summary</h2>
       {summary_text}
     </section>
-"""
-
-
+    """
         # Start container for individual results
         html_content += """<section id="team-results">\n
         <h2>Team Results</h2>"""
@@ -127,6 +127,7 @@ def csv_to_html(csv_filename, output_folder):
 
 
                      </footer>
+                     <script src="../theme-toggle.js"></script>
         </body>
 </html>
 """

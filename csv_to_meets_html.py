@@ -51,7 +51,7 @@ def csv_to_html(csv_filename, output_folder):
     <h2>{h2_text}</h2>
 </header>
    <main id = "main">
-    <button id="theme-toggle">Toggle Dark Mode</button>
+    <button id="theme-toggle">Dark Mode</button>
 
     <section class="summary" id = "summary">
       <h2>Race Summary</h2>
@@ -82,7 +82,8 @@ def csv_to_html(csv_filename, output_folder):
                     html_content += "</table>\n"
                     html_content += """</section>\n
                     <section id="individual-results">\n
-                    <h2>Individual Results</h2>"""
+                    <h2>Individual Results</h2>
+                    <h3>Click on the Athlete to View Results!</h3>"""
 
                 place = row[0]
                 grade = row[1]
@@ -93,15 +94,18 @@ def csv_to_html(csv_filename, output_folder):
                 # Add the athlete div
                 html_content += f"""
 <div class="athlete">
-<figure> 
-    <img src="../images/profiles/{profile_pic}" width="200" alt="Profile picture of {name}"> 
+  <figure>
+    <img src="../images/profiles/{profile_pic}" width="200" alt="Profile picture of {name}">
     <figcaption>{name}</figcaption>
-</figure>
-<dl>
-    <dt>Place:</dt><dd>{place}</dd>
-    <dt>Time:</dt><dd>{time}</dd>
-    <dt>Grade:</dt><dd>{grade}</dd>
-</dl>
+  </figure>
+
+  <div class="athlete-details">
+    <dl>
+      <dt>🏅:</dt><dd>{place}</dd>
+      <dt>🕙:</dt><dd>{time}</dd>
+      <dt>🏫:</dt><dd>{grade}</dd>
+    </dl>
+  </div>
 </div>
 """
 

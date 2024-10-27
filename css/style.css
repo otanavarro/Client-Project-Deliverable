@@ -421,3 +421,72 @@ th {
     top: 0; /* Sticks to the top when scrolling */
     z-index: 1; /* Ensure it stays above other elements */
 }
+
+/* Athlete Profile Images - Simple Hover Zoom */
+#individual-results .athlete img {
+    border: 2px solid var(--text-color);
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth hover */
+}
+
+#individual-results .athlete img:hover {
+    transform: scale(1.05); /* Slight zoom */
+    box-shadow: 0 0 5px var(--text-color); /* Glow effect */
+}
+
+/* Gallery Images - Simple Hover Zoom */
+#gallery img {
+    border-radius: 5px;
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth hover */
+}
+
+#gallery img:hover {
+    transform: scale(1.05); /* Slight zoom */
+    box-shadow: 0 0 5px var(--text-color); /* Glow effect */
+}
+
+/* Athlete Details - Simple Fade-In */
+.athlete-details {
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.athlete:hover .athlete-details {
+    opacity: 1; /* Show on hover */
+}
+
+/* Theme Toggle Button - Simple Hover Zoom */
+#theme-toggle {
+    transition: transform 0.3s;
+}
+
+#theme-toggle:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    /* Disable or simplify transitions */
+    * {
+        transition: none !important;
+        animation: none !important;
+    }
+
+    /* Example: Static zoom effect instead of animation */
+    #individual-results .athlete img:hover {
+        transform: none;
+        box-shadow: 0 0 5px var(--text-color); /* Only shadow without animation */
+    }
+
+    #gallery img:hover {
+        transform: none;
+        box-shadow: 0 0 5px var(--text-color); /* Static effect */
+    }
+
+    /* Disable scrolling animation */
+    html {
+        scroll-behavior: auto;
+    }
+}

@@ -38,7 +38,7 @@ def csv_to_html(csv_filename, output_folder):
     <input type="checkbox" id="toggle" style="display:none;">
     <label class="hamburger" for="toggle">&#9776;</label>
     <ul>
-        <li><a href="index.html">Home Page</a></li>
+        <li><a href="../index.html">Home Page</a></li>
         <li><a href="#summary">Summary</a></li>
         <li><a href="#team-results">Team Results</a></li>
         <li><a href="#individual-results">Individual Results</a></li>

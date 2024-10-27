@@ -415,3 +415,9 @@ nav ul {
     outline: none; /* Remove outline */
     box-shadow: 0 0 5px var(--text-color); /* Add a glow effect */
 }
+
+th {
+    position: sticky;
+    top: 0; /* Sticks to the top when scrolling */
+    z-index: 1; /* Ensure it stays above other elements */
+}

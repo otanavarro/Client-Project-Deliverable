@@ -31,6 +31,7 @@ def csv_to_html(csv_filename, output_folder):
 <title>{link_text}</title>
 <link rel="stylesheet" href="../css/reset.css">
 <link rel="stylesheet" href="../css/style.css">
+<link href="../dist/css/lightbox.css" rel="stylesheet">
 </head>
 <body>
 
@@ -94,20 +95,23 @@ def csv_to_html(csv_filename, output_folder):
                 # Add the athlete div
                 html_content += f"""
 <div class="athlete">
-  <figure>
-    <img src="../images/profiles/{profile_pic}" width="200" alt="Profile picture of {name}">
-    <figcaption>{name}</figcaption>
-  </figure>
+    <figure>
+        <a href="../images/profiles/{profile_pic}" data-lightbox="gallery" data-title="{name} - Time: {time}, Place: {place}">
+            <img src="../images/profiles/{profile_pic}" width="200" alt="Profile picture of {name}">
+        </a>
+        <figcaption>{name}</figcaption>
+    </figure>
 
-  <div class="athlete-details">
-    <dl>
-      <dt>🏅:</dt><dd>{place}</dd>
-      <dt>🕙:</dt><dd>{time}</dd>
-      <dt>🏫:</dt><dd>{grade}</dd>
-    </dl>
-  </div>
+    <div class="athlete-details">
+        <dl>
+            <dt>🏅:</dt><dd>{place}</dd>
+            <dt>🕙:</dt><dd>{time}</dd>
+            <dt>🏫:</dt><dd>{grade}</dd>
+        </dl>
+    </div>
 </div>
 """
+
 
         html_content += """</section>\n
         <section id = "gallery">
@@ -131,7 +135,9 @@ def csv_to_html(csv_filename, output_folder):
 
 
                      </footer>
-                     <script src="../theme-toggle.js"></script>
+                     <script src="../js/theme-toggle.js"></script>
+                     <script src="../js/default-img.js"></script>
+                     <script src="../dist/js/lightbox-plus-jquery.js"></script>
         </body>
 </html>
 """
@@ -204,7 +210,7 @@ def generate_image_tags(image_files, folder_path):
     for img in image_files:
         img_path = os.path.join(folder_path, img)
         # print(f"The image_path is {img_path}")
-        img_tags.append(f'<img src=../{img_path} width = "200" alt="">')
+        img_tags.append(f'<a href="../{img_path}" data-lightbox="gallery" data-title="Gallery Image"><img src="../{img_path}" width="200" alt="Gallery Image"></a>')
     return "\n".join(img_tags)
 
 # Putting it all together

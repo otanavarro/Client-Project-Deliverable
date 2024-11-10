@@ -135,8 +135,7 @@ def csv_to_html(csv_filename, output_folder):
 
 
                      </footer>
-                     <script src="../js/theme-toggle.js"></script>
-                     <script src="../js/default-img.js"></script>
+                     <script src="../theme-default_img.js"></script>
                      <script src="../dist/js/lightbox-plus-jquery.js"></script>
         </body>
 </html>

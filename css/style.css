@@ -181,6 +181,7 @@ tr:hover {
     gap: 15px;
     justify-items: center;
     padding: 0 10px;
+    padding: 10px 15px; /* adding padding for spacing (fix comment CDP3) */
     margin-top: 15px;
 }
 
@@ -349,6 +350,7 @@ html {
     color: white;
     background-color: var(--nav-bg-color);
     padding: 10px 15px;
+    margin: 10px; /* adding padding from spacing from edges (fix commend CDP3) */
     border-radius: 5px;
     display: inline-block;
     transition: background-color 0.3s;

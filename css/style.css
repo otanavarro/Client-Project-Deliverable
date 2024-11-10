@@ -25,8 +25,8 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: var(--bg-color);
     color: var(--p-color);
-    margin: 0;
-    padding: 0;
+    margin: 0px 20px; /* fixing space between edges (CPD3 comment) */
+    text-align: center;
     transition: background-color 0.3s, color 0.3s;
 }
 
@@ -181,7 +181,6 @@ tr:hover {
     gap: 15px;
     justify-items: center;
     padding: 0 10px;
-    padding: 10px 15px; /* adding padding for spacing (fix comment CDP3) */
     margin-top: 15px;
 }
 
@@ -350,9 +349,9 @@ html {
     color: white;
     background-color: var(--nav-bg-color);
     padding: 10px 15px;
-    margin: 10px; /* adding padding from spacing from edges (fix commend CDP3) */
     border-radius: 5px;
     display: inline-block;
+    margin: 0px 80px; /* fixing padding for meet links */
     transition: background-color 0.3s;
 }
 

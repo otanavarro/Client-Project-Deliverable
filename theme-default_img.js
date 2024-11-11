@@ -13,3 +13,4 @@ const toggleDarkMode = () => {
 
 // Ensure the correct ID is used
 document.querySelector('#theme-toggle').addEventListener('click', toggleDarkMode);
+a

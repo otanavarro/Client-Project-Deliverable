@@ -1,4 +1,4 @@
-/* setting up light mode variables */
+/* setting up light mode variables */ 
 :root {
     --bg-color: #EBE9E1;
     --text-color: #C33000;
@@ -9,7 +9,7 @@
     --hover-bg: #f1f1f1;
 }
 
-/* setting up dark mode variables */
+/* setting up dark mode variables */ 
 .dark-mode {
     --bg-color: #2E2E2E;
     --text-color: #FFA500;
@@ -20,24 +20,24 @@
     --hover-bg: #555;
 }
 
-/* general body style */
+/* general body style */ /* keeping it simple */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: var(--bg-color);
     color: var(--p-color);
-    margin: 0px 20px; /* fixing space between edges (CPD3 comment) */
+    margin: 0px 20px; /* fixing space between edges */
     text-align: center;
     transition: background-color 0.3s, color 0.3s;
 }
 
-/* header section styles */
+/* header section styles */ /* headlines pop */
 h2, h3, header h1, header h2 {
     color: var(--text-color);
     text-align: center;
     grid-column: 1 / -1;
 }
 
-/* main title look */
+/* main title look */ /* title gets attention */
 header h1 {
     margin: 20px auto 5px;
     text-transform: uppercase;
@@ -45,7 +45,7 @@ header h1 {
     font-size: 28px;
 }
 
-/* making title links clickable */
+/* making title links clickable */ 
 header h1 a {
     color: inherit;
     text-decoration: none;
@@ -57,14 +57,14 @@ header h1 a:hover {
     color: white;
 }
 
-/* subtitle styling */
+/* subtitle styling */ /* for those extra lines */
 header h2 {
     font-weight: 500;
     font-size: 22px;
     margin: 10px 0 15px;
 }
 
-/* navbar styling */
+/* navbar styling */ /* nav essentials */
 nav {
     background-color: var(--nav-bg-color);
     padding: 10px;
@@ -72,7 +72,7 @@ nav {
     text-align: center;
 }
 
-/* hiding nav items by default */
+/* hiding nav items by default */ /* hide until needed */
 nav ul {
     list-style: none;
     padding: 0;
@@ -80,13 +80,13 @@ nav ul {
     display: none;
 }
 
-/* inline nav links */
+/* inline nav links */ /* neat and inline */
 nav li {
     display: inline-block;
     margin: 0 10px;
 }
 
-/* nav link styles */
+/* nav link styles */ /* buttons that pop */
 nav a {
     text-decoration: none;
     color: white;
@@ -101,7 +101,7 @@ nav a:hover {
     color: var(--nav-bg-color);
 }
 
-/* hamburger icon setup */
+/* hamburger icon setup */ /* quick toggle */
 .hamburger {
     display: block;
     cursor: pointer;
@@ -115,24 +115,11 @@ nav a:hover {
     color: var(--nav-bg-color);
 }
 
-/* show nav on toggle */
+/* show nav on toggle */ /* for the click */
 #toggle:checked + .hamburger + ul {
     display: flex;
     background-color: var(--nav-bg-color);
     flex-direction: column;
-}
-
-/* responsive navbar for wider screens */
-@media (min-width: 900px) {
-    nav ul {
-        display: flex;
-        justify-content: center;
-        background-color: transparent;
-    }
-
-    .hamburger {
-        display: none;
-    }
 }
 
 /* styling tables */
@@ -143,14 +130,14 @@ table {
     font-size: 14px;
 }
 
-/* table cell styles */
+/* table cell styles */ /* clean rows */
 th, td {
     padding: 8px;
     border: 1px solid var(--table-border);
     text-align: center;
 }
 
-/* sticky table headers */
+/* sticky table headers */ /* headers stay put */
 th {
     background-color: var(--nav-bg-color);
     color: white;
@@ -159,7 +146,7 @@ th {
     z-index: 1;
 }
 
-/* alternating row colors */
+/* alternating row colors */ /* stripes for clarity */
 tr:nth-child(even) {
     background-color: var(--bg-color);
 }
@@ -168,13 +155,13 @@ tr:nth-child(odd) {
     background-color: var(--tr-color);
 }
 
-/* row hover effect */
+/* row hover effect */ /* highlight on hover */
 tr:hover {
     background-color: var(--hover-bg);
     font-weight: 700;
 }
 
-/* layout for individual results */
+/* layout for individual results */ /* keeping it grid */
 #individual-results {
     display: grid;
     grid-template-columns: 1fr;
@@ -184,12 +171,12 @@ tr:hover {
     margin-top: 15px;
 }
 
-/* styling athlete cards */
+/* styling athlete cards */ /* spotlight on athletes */
 #individual-results .athlete {
     text-align: center;
 }
 
-/* athlete images */
+/* athlete images */ /* adding flair */
 #individual-results .athlete img {
     max-width: 100%;
     border: 2px solid var(--text-color);
@@ -204,7 +191,7 @@ tr:hover {
     border: 5px solid var(--text-color);
 }
 
-/* captions under athlete images */
+/* captions under athlete images */ 
 #individual-results .athlete figcaption {
     font-weight: bold;
     color: var(--text-color);
@@ -212,7 +199,7 @@ tr:hover {
     margin-top: 10px;
 }
 
-/* hidden athlete details by default */
+/* hidden athlete details by default */ /* hover for more */
 .athlete-details {
     background-color: white;
     color: black;
@@ -224,13 +211,13 @@ tr:hover {
     transition: opacity 0.3s ease-in-out;
 }
 
-/* show details on hover */
+/* show details on hover */ 
 .athlete:hover .athlete-details {
     display: block;
     opacity: 1;
 }
 
-/* gallery layout */
+/* gallery layout */ /* organized grid */
 #gallery {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -238,7 +225,7 @@ tr:hover {
     padding: 10px;
 }
 
-/* gallery image styles */
+/* gallery image styles */ /* focus changes */
 #gallery img {
     width: 100%;
     border-radius: 5px;
@@ -251,7 +238,7 @@ tr:hover {
     border: 5px solid var(--text-color);
 }
 
-/* footer styling */
+/* footer styling */ 
 footer {
     background-color: var(--nav-bg-color);
     color: white;
@@ -260,7 +247,7 @@ footer {
     font-size: 18px;
 }
 
-/* footer links */
+/* footer links */ /* clickable and clean */
 footer a {
     font-weight: bold;
     color: white;
@@ -273,7 +260,7 @@ footer a:hover {
     color: var(--nav-bg-color);
 }
 
-/* responsive design for small screens */
+/* responsive design for tablets */ /* keeping it adaptive */
 @media (min-width: 600px) {
     #individual-results {
         grid-template-columns: repeat(2, 1fr);
@@ -292,8 +279,17 @@ footer a:hover {
     }
 }
 
-/* even more responsive design */
+/* responsive design for desktop */ /* more grids for larger screens */
 @media (min-width: 900px) {
+    nav ul {
+        display: flex;
+        justify-content: center;
+        background-color: transparent;
+    }
+
+    .hamburger {
+        display: none;
+    }
     #individual-results {
         grid-template-columns: repeat(4, 1fr);
     }
@@ -316,24 +312,13 @@ html {
     scroll-behavior: smooth;
 }
 
-/* disabling animations if preferred */
-@media (prefers-reduced-motion: reduce) {
-    * {
-        transition: none !important;
-    }
-
-    html {
-        scroll-behavior: auto;
-    }
-}
-
-/* meet section styles */
+/* meet section styles */ /* for the events */
 #meets {
     text-align: center;
     margin-top: 20px;
 }
 
-/* styling meet list */
+/* styling meet list */ /* list without the dots */
 #meets ul {
     list-style: none;
     padding: 0;
@@ -343,7 +328,7 @@ html {
     margin: 10px 0;
 }
 
-/* meet links */
+/* meet links */ /* event highlights */
 #meets a {
     text-decoration: none;
     color: white;
@@ -351,7 +336,7 @@ html {
     padding: 10px 15px;
     border-radius: 5px;
     display: inline-block;
-    margin: 0px 80px; /* fixing padding for meet links */
+    margin: 0px 80px; /* spacing it out */
     transition: background-color 0.3s;
 }
 
@@ -360,7 +345,7 @@ html {
     color: var(--nav-bg-color);
 }
 
-/* theme toggle button */
+/* theme toggle button */ /* switch it up */
 #theme-toggle {
     background-color: var(--nav-bg-color);
     color: white;
@@ -378,4 +363,28 @@ html {
     background-color: white;
     color: var(--nav-bg-color);
     transform: scale(1.05);
+}
+
+/* used especially when accessing with keyboard to bring focus to elements */
+a:focus img, a:focus, button:focus {
+    outline: 3px solid #FFA500; /* highlight for accessibility */
+    outline-offset: 2px;
+    border-radius: 3px;
+}
+
+/* disabling animations if preferred */ 
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none;
+        animation: none;
+    }
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    .lightbox {
+        animation: none;
+        transition: none;
+    }
 }

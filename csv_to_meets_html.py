@@ -22,8 +22,7 @@ def csv_to_html(csv_filename, output_folder):
         summary_text = rows[3][0]
 
         # Initialize HTML content
-        html_content = f"""
-<!DOCTYPE html>
+        html_content = f"""<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
